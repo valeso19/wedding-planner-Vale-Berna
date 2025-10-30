@@ -1,0 +1,122 @@
+/* Paleta de colores */
+:root {
+  --azul-marino: #0C1B33;
+  --celeste-suave: #87B9E0;
+  --azul-grisaceo: #6E7A8A;
+  --verde-seco: #8FAF9E;
+  --blanco: #FFFFFF;
+  --modo-oscuro-bg: #1a1a1a;
+  --modo-oscuro-text: #e0e0e0;
+}
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--blanco);
+  color: var(--azul-marino);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: var(--modo-oscuro-bg);
+  color: var(--modo-oscuro-text);
+}
+
+/* Diseño moderno */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.progress-chart {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.section-card {
+  background-color: var(--celeste-suave);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.section-card:hover {
+  background-color: var(--azul-grisaceo);
+}
+
+body.dark .section-card {
+  background-color: var(--azul-grisaceo);
+}
+
+.checklist {
+  list-style: none;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button {
+  background-color: var(--verde-seco);
+  color: var(--blanco);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: var(--azul-marino);
+}
+
+input, select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--azul-grisaceo);
+  margin: 5px 0;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}
